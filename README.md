@@ -12,15 +12,25 @@ Get http://localhost:8080/hello endpoint
 
 
 ## CODE GENERATOR INFO
-
-One API json file located in src/openapi : quite complex ... but highly simplified from real one ! => Sorry not having done more
+One API json file located in src/openapi/reproducer.json : quite complex ... but highly simplified from real one  (~100k lines) ! 
+=> Sorry not having done more
 reproducer_json is the conf key
-Bearer id dummy
+options for code generation are "mutinity=true" and base package name "com.acme"
+The generated "Rest Client" is VehiclesApi => only one GET service : getVehicles
 
-I had an extension to the generated API to add a Request Client Filter to log Authorization Headers at each request
+=> see GreetingResource.java /hello entry 
+  One async call
+  Some handlers for logging errors
+  and nothing more
+
+I had an interface extension to the generated API to add a Request Client Filter to log Authorization Headers at each request
+With or Without extension, the results are the same.
 
 ## VERSIONS
 windows 11
 Java 21
 quarkus:3.17.4
 quarkus-openapi-generator:2.6.0-lts
+
+## APOLOGIES
+this is my first reproducer. I ve done my best !
