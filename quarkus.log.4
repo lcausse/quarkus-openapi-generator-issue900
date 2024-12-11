@@ -1,0 +1,80 @@
+2024-12-11 23:13:50,192 x1-11-lca C:\Program Files\Java\jdk-21.0.1\bin\java.exe[71496] INFO  [io.quarkus] (Quarkus Main Thread) quarkus-openapi-generator-issue9000 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.17.4) started in 0.356s. Listening on: http://localhost:8080
+2024-12-11 23:13:50,194 x1-11-lca C:\Program Files\Java\jdk-21.0.1\bin\java.exe[71496] INFO  [io.quarkus] (Quarkus Main Thread) Profile dev activated. Live Coding activated.
+2024-12-11 23:13:50,194 x1-11-lca C:\Program Files\Java\jdk-21.0.1\bin\java.exe[71496] INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [cdi, openapi-generator, qute, rest, rest-client, rest-client-jackson, rest-jackson, smallrye-context-propagation, vertx]
+2024-12-11 23:13:50,195 x1-11-lca C:\Program Files\Java\jdk-21.0.1\bin\java.exe[71496] INFO  [io.qua.dep.dev.RuntimeUpdatesProcessor] (vert.x-worker-thread-11) Live reload total time: 0.510s 
+2024-12-11 23:13:50,206 x1-11-lca C:\Program Files\Java\jdk-21.0.1\bin\java.exe[71496] WARN  [com.acm.GreetingResource] (vert.x-eventloop-thread-1) Authorization Header Value : ...Bearer xxx_yyy_ZZZZZZZZZZZZZZZZZZZZZZZZZZZz... (1)
+2024-12-11 23:13:50,314 x1-11-lca C:\Program Files\Java\jdk-21.0.1\bin\java.exe[71496] DEBUG [org.jbo.res.rea.cli.log.DefaultClientLogger] (vert.x-eventloop-thread-1) Request: GET https://api.eu.samsara.com/fleet/vehicles Headers[Accept=application/json Authorization=Bearer xxx_yyy_ZZZZZZZZZZZZZZZZZZZZZZZZZZZz User-Agent=Quarkus REST Client], Empty body
+2024-12-11 23:13:50,339 x1-11-lca C:\Program Files\Java\jdk-21.0.1\bin\java.exe[71496] DEBUG [org.jbo.res.rea.cli.log.DefaultClientLogger] (vert.x-eventloop-thread-1) Response: GET https://api.eu.samsara.com/fleet/vehicles, Status[401 Unauthorized], Headers[Date=Wed, 11 Dec 2024 22:13:50 GMT Content-Type=application/json; charset=utf-8 Content-Length=59 Connection=keep-alive Request-Id=fgiyemoz X-Content-Type-Options=nosniff], Body:
+{"message":"invalid token","requestId":"fgiyemoz-qfefhkrz"}
+2024-12-11 23:13:50,340 x1-11-lca C:\Program Files\Java\jdk-21.0.1\bin\java.exe[71496] WARN  [com.acm.GreetingResource] (vert.x-eventloop-thread-1) First Error : Unauthorized : => Correct
+2024-12-11 23:13:50,642 x1-11-lca C:\Program Files\Java\jdk-21.0.1\bin\java.exe[71496] WARN  [com.acm.GreetingResource] (executor-thread-1) Authorization Header Value : ...Bearer xxx_yyy_ZZZZZZZZZZZZZZZZZZZZZZZZZZZz... (2)
+2024-12-11 23:13:50,645 x1-11-lca C:\Program Files\Java\jdk-21.0.1\bin\java.exe[71496] DEBUG [org.jbo.res.rea.cli.log.DefaultClientLogger] (vert.x-eventloop-thread-1) Request: GET https://api.eu.samsara.com/fleet/vehicles Headers[Accept=application/json Authorization=Bearer xxx_yyy_ZZZZZZZZZZZZZZZZZZZZZZZZZZZz Authorization=Bearer xxx_yyy_ZZZZZZZZZZZZZZZZZZZZZZZZZZZz User-Agent=Quarkus REST Client], Empty body
+2024-12-11 23:13:50,669 x1-11-lca C:\Program Files\Java\jdk-21.0.1\bin\java.exe[71496] DEBUG [org.jbo.res.rea.cli.log.DefaultClientLogger] (vert.x-eventloop-thread-1) Response: GET https://api.eu.samsara.com/fleet/vehicles, Status[400 Bad Request], Headers[Server=awselb/2.0 Date=Wed, 11 Dec 2024 22:13:50 GMT Content-Type=text/html Content-Length=122 Connection=close], Body:
+<html>
+<head><title>400 Bad Request</title></head>
+<body>
+<center><h1>400 Bad Request</h1></cente
+2024-12-11 23:13:50,671 x1-11-lca C:\Program Files\Java\jdk-21.0.1\bin\java.exe[71496] WARN  [com.acm.GreetingResource] (vert.x-eventloop-thread-1) Following Error : 400 -> should the same as the first one
+2024-12-11 23:13:50,889 x1-11-lca C:\Program Files\Java\jdk-21.0.1\bin\java.exe[71496] WARN  [com.acm.GreetingResource] (executor-thread-1) Authorization Header Value : ...Bearer xxx_yyy_ZZZZZZZZZZZZZZZZZZZZZZZZZZZz... (3)
+2024-12-11 23:13:50,940 x1-11-lca C:\Program Files\Java\jdk-21.0.1\bin\java.exe[71496] DEBUG [org.jbo.res.rea.cli.log.DefaultClientLogger] (vert.x-eventloop-thread-1) Request: GET https://api.eu.samsara.com/fleet/vehicles Headers[Accept=application/json Authorization=Bearer xxx_yyy_ZZZZZZZZZZZZZZZZZZZZZZZZZZZz Authorization=Bearer xxx_yyy_ZZZZZZZZZZZZZZZZZZZZZZZZZZZz Authorization=Bearer xxx_yyy_ZZZZZZZZZZZZZZZZZZZZZZZZZZZz User-Agent=Quarkus REST Client], Empty body
+2024-12-11 23:13:50,965 x1-11-lca C:\Program Files\Java\jdk-21.0.1\bin\java.exe[71496] DEBUG [org.jbo.res.rea.cli.log.DefaultClientLogger] (vert.x-eventloop-thread-1) Response: GET https://api.eu.samsara.com/fleet/vehicles, Status[400 Bad Request], Headers[Server=awselb/2.0 Date=Wed, 11 Dec 2024 22:13:51 GMT Content-Type=text/html Content-Length=122 Connection=close], Body:
+<html>
+<head><title>400 Bad Request</title></head>
+<body>
+<center><h1>400 Bad Request</h1></cente
+2024-12-11 23:13:50,966 x1-11-lca C:\Program Files\Java\jdk-21.0.1\bin\java.exe[71496] WARN  [com.acm.GreetingResource] (vert.x-eventloop-thread-1) Following Error : 400 -> should the same as the first one
+2024-12-11 23:13:52,018 x1-11-lca C:\Program Files\Java\jdk-21.0.1\bin\java.exe[71496] WARN  [com.acm.GreetingResource] (executor-thread-1) Authorization Header Value : ...Bearer xxx_yyy_ZZZZZZZZZZZZZZZZZZZZZZZZZZZz... (4)
+2024-12-11 23:13:52,077 x1-11-lca C:\Program Files\Java\jdk-21.0.1\bin\java.exe[71496] DEBUG [org.jbo.res.rea.cli.log.DefaultClientLogger] (vert.x-eventloop-thread-1) Request: GET https://api.eu.samsara.com/fleet/vehicles Headers[Accept=application/json Authorization=Bearer xxx_yyy_ZZZZZZZZZZZZZZZZZZZZZZZZZZZz Authorization=Bearer xxx_yyy_ZZZZZZZZZZZZZZZZZZZZZZZZZZZz Authorization=Bearer xxx_yyy_ZZZZZZZZZZZZZZZZZZZZZZZZZZZz Authorization=Bearer xxx_yyy_ZZZZZZZZZZZZZZZZZZZZZZZZZZZz User-Agent=Quarkus REST Client], Empty body
+2024-12-11 23:13:52,102 x1-11-lca C:\Program Files\Java\jdk-21.0.1\bin\java.exe[71496] DEBUG [org.jbo.res.rea.cli.log.DefaultClientLogger] (vert.x-eventloop-thread-1) Response: GET https://api.eu.samsara.com/fleet/vehicles, Status[400 Bad Request], Headers[Server=awselb/2.0 Date=Wed, 11 Dec 2024 22:13:52 GMT Content-Type=text/html Content-Length=122 Connection=close], Body:
+<html>
+<head><title>400 Bad Request</title></head>
+<body>
+<center><h1>400 Bad Request</h1></cente
+2024-12-11 23:13:52,106 x1-11-lca C:\Program Files\Java\jdk-21.0.1\bin\java.exe[71496] WARN  [com.acm.GreetingResource] (vert.x-eventloop-thread-1) Following Error : 400 -> should the same as the first one
+2024-12-11 23:13:53,912 x1-11-lca C:\Program Files\Java\jdk-21.0.1\bin\java.exe[71496] WARN  [com.acm.GreetingResource] (executor-thread-1) Authorization Header Value : ...Bearer xxx_yyy_ZZZZZZZZZZZZZZZZZZZZZZZZZZZz... (5)
+2024-12-11 23:13:53,977 x1-11-lca C:\Program Files\Java\jdk-21.0.1\bin\java.exe[71496] DEBUG [org.jbo.res.rea.cli.log.DefaultClientLogger] (vert.x-eventloop-thread-1) Request: GET https://api.eu.samsara.com/fleet/vehicles Headers[Accept=application/json Authorization=Bearer xxx_yyy_ZZZZZZZZZZZZZZZZZZZZZZZZZZZz Authorization=Bearer xxx_yyy_ZZZZZZZZZZZZZZZZZZZZZZZZZZZz Authorization=Bearer xxx_yyy_ZZZZZZZZZZZZZZZZZZZZZZZZZZZz Authorization=Bearer xxx_yyy_ZZZZZZZZZZZZZZZZZZZZZZZZZZZz Authorization=Bearer xxx_yyy_ZZZZZZZZZZZZZZZZZZZZZZZZZZZz User-Agent=Quarkus REST Client], Empty body
+2024-12-11 23:13:54,001 x1-11-lca C:\Program Files\Java\jdk-21.0.1\bin\java.exe[71496] DEBUG [org.jbo.res.rea.cli.log.DefaultClientLogger] (vert.x-eventloop-thread-1) Response: GET https://api.eu.samsara.com/fleet/vehicles, Status[400 Bad Request], Headers[Server=awselb/2.0 Date=Wed, 11 Dec 2024 22:13:54 GMT Content-Type=text/html Content-Length=122 Connection=close], Body:
+<html>
+<head><title>400 Bad Request</title></head>
+<body>
+<center><h1>400 Bad Request</h1></cente
+2024-12-11 23:13:54,004 x1-11-lca C:\Program Files\Java\jdk-21.0.1\bin\java.exe[71496] WARN  [com.acm.GreetingResource] (vert.x-eventloop-thread-1) Following Error : 400 -> should the same as the first one
+2024-12-11 23:14:34,095 x1-11-lca C:\Program Files\Java\jdk-21.0.1\bin\java.exe[71496] WARN  [com.acm.GreetingResource] (vert.x-eventloop-thread-1) Authorization Header Value : ...Bearer xxx_yyy_ZZZZZZZZZZZZZZZZZZZZZZZZZZZz... (1)
+2024-12-11 23:14:34,190 x1-11-lca C:\Program Files\Java\jdk-21.0.1\bin\java.exe[71496] DEBUG [org.jbo.res.rea.cli.log.DefaultClientLogger] (vert.x-eventloop-thread-1) Request: GET https://api.eu.samsara.com/fleet/vehicles Headers[Accept=application/json Authorization=Bearer xxx_yyy_ZZZZZZZZZZZZZZZZZZZZZZZZZZZz User-Agent=Quarkus REST Client], Empty body
+2024-12-11 23:14:34,241 x1-11-lca C:\Program Files\Java\jdk-21.0.1\bin\java.exe[71496] DEBUG [org.jbo.res.rea.cli.log.DefaultClientLogger] (vert.x-eventloop-thread-1) Response: GET https://api.eu.samsara.com/fleet/vehicles, Status[401 Unauthorized], Headers[Date=Wed, 11 Dec 2024 22:14:34 GMT Content-Type=application/json; charset=utf-8 Content-Length=59 Connection=keep-alive Request-Id=nkbmtoev X-Content-Type-Options=nosniff], Body:
+{"message":"invalid token","requestId":"nkbmtoev-lncsbkol"}
+2024-12-11 23:14:34,243 x1-11-lca C:\Program Files\Java\jdk-21.0.1\bin\java.exe[71496] WARN  [com.acm.GreetingResource] (vert.x-eventloop-thread-1) First Error : Unauthorized : => Correct
+2024-12-11 23:14:34,480 x1-11-lca C:\Program Files\Java\jdk-21.0.1\bin\java.exe[71496] WARN  [com.acm.GreetingResource] (executor-thread-1) Authorization Header Value : ...Bearer xxx_yyy_ZZZZZZZZZZZZZZZZZZZZZZZZZZZz... (2)
+2024-12-11 23:14:34,489 x1-11-lca C:\Program Files\Java\jdk-21.0.1\bin\java.exe[71496] DEBUG [org.jbo.res.rea.cli.log.DefaultClientLogger] (vert.x-eventloop-thread-1) Request: GET https://api.eu.samsara.com/fleet/vehicles Headers[Accept=application/json Authorization=Bearer xxx_yyy_ZZZZZZZZZZZZZZZZZZZZZZZZZZZz Authorization=Bearer xxx_yyy_ZZZZZZZZZZZZZZZZZZZZZZZZZZZz User-Agent=Quarkus REST Client], Empty body
+2024-12-11 23:14:34,522 x1-11-lca C:\Program Files\Java\jdk-21.0.1\bin\java.exe[71496] DEBUG [org.jbo.res.rea.cli.log.DefaultClientLogger] (vert.x-eventloop-thread-1) Response: GET https://api.eu.samsara.com/fleet/vehicles, Status[400 Bad Request], Headers[Server=awselb/2.0 Date=Wed, 11 Dec 2024 22:14:34 GMT Content-Type=text/html Content-Length=122 Connection=close], Body:
+<html>
+<head><title>400 Bad Request</title></head>
+<body>
+<center><h1>400 Bad Request</h1></cente
+2024-12-11 23:14:34,526 x1-11-lca C:\Program Files\Java\jdk-21.0.1\bin\java.exe[71496] WARN  [com.acm.GreetingResource] (vert.x-eventloop-thread-1) Following Error : 400 -> should the same as the first one
+2024-12-11 23:14:35,131 x1-11-lca C:\Program Files\Java\jdk-21.0.1\bin\java.exe[71496] WARN  [com.acm.GreetingResource] (executor-thread-1) Authorization Header Value : ...Bearer xxx_yyy_ZZZZZZZZZZZZZZZZZZZZZZZZZZZz... (3)
+2024-12-11 23:14:35,192 x1-11-lca C:\Program Files\Java\jdk-21.0.1\bin\java.exe[71496] DEBUG [org.jbo.res.rea.cli.log.DefaultClientLogger] (vert.x-eventloop-thread-1) Request: GET https://api.eu.samsara.com/fleet/vehicles Headers[Accept=application/json Authorization=Bearer xxx_yyy_ZZZZZZZZZZZZZZZZZZZZZZZZZZZz Authorization=Bearer xxx_yyy_ZZZZZZZZZZZZZZZZZZZZZZZZZZZz Authorization=Bearer xxx_yyy_ZZZZZZZZZZZZZZZZZZZZZZZZZZZz User-Agent=Quarkus REST Client], Empty body
+2024-12-11 23:14:35,223 x1-11-lca C:\Program Files\Java\jdk-21.0.1\bin\java.exe[71496] DEBUG [org.jbo.res.rea.cli.log.DefaultClientLogger] (vert.x-eventloop-thread-1) Response: GET https://api.eu.samsara.com/fleet/vehicles, Status[400 Bad Request], Headers[Server=awselb/2.0 Date=Wed, 11 Dec 2024 22:14:35 GMT Content-Type=text/html Content-Length=122 Connection=close], Body:
+<html>
+<head><title>400 Bad Request</title></head>
+<body>
+<center><h1>400 Bad Request</h1></cente
+2024-12-11 23:14:35,226 x1-11-lca C:\Program Files\Java\jdk-21.0.1\bin\java.exe[71496] WARN  [com.acm.GreetingResource] (vert.x-eventloop-thread-1) Following Error : 400 -> should the same as the first one
+2024-12-11 23:14:35,964 x1-11-lca C:\Program Files\Java\jdk-21.0.1\bin\java.exe[71496] WARN  [com.acm.GreetingResource] (executor-thread-1) Authorization Header Value : ...Bearer xxx_yyy_ZZZZZZZZZZZZZZZZZZZZZZZZZZZz... (4)
+2024-12-11 23:14:36,023 x1-11-lca C:\Program Files\Java\jdk-21.0.1\bin\java.exe[71496] DEBUG [org.jbo.res.rea.cli.log.DefaultClientLogger] (vert.x-eventloop-thread-1) Request: GET https://api.eu.samsara.com/fleet/vehicles Headers[Accept=application/json Authorization=Bearer xxx_yyy_ZZZZZZZZZZZZZZZZZZZZZZZZZZZz Authorization=Bearer xxx_yyy_ZZZZZZZZZZZZZZZZZZZZZZZZZZZz Authorization=Bearer xxx_yyy_ZZZZZZZZZZZZZZZZZZZZZZZZZZZz Authorization=Bearer xxx_yyy_ZZZZZZZZZZZZZZZZZZZZZZZZZZZz User-Agent=Quarkus REST Client], Empty body
+2024-12-11 23:14:36,054 x1-11-lca C:\Program Files\Java\jdk-21.0.1\bin\java.exe[71496] DEBUG [org.jbo.res.rea.cli.log.DefaultClientLogger] (vert.x-eventloop-thread-1) Response: GET https://api.eu.samsara.com/fleet/vehicles, Status[400 Bad Request], Headers[Server=awselb/2.0 Date=Wed, 11 Dec 2024 22:14:36 GMT Content-Type=text/html Content-Length=122 Connection=close], Body:
+<html>
+<head><title>400 Bad Request</title></head>
+<body>
+<center><h1>400 Bad Request</h1></cente
+2024-12-11 23:14:36,056 x1-11-lca C:\Program Files\Java\jdk-21.0.1\bin\java.exe[71496] WARN  [com.acm.GreetingResource] (vert.x-eventloop-thread-1) Following Error : 400 -> should the same as the first one
+2024-12-11 23:14:37,939 x1-11-lca C:\Program Files\Java\jdk-21.0.1\bin\java.exe[71496] WARN  [com.acm.GreetingResource] (executor-thread-1) Authorization Header Value : ...Bearer xxx_yyy_ZZZZZZZZZZZZZZZZZZZZZZZZZZZz... (5)
+2024-12-11 23:14:38,011 x1-11-lca C:\Program Files\Java\jdk-21.0.1\bin\java.exe[71496] DEBUG [org.jbo.res.rea.cli.log.DefaultClientLogger] (vert.x-eventloop-thread-1) Request: GET https://api.eu.samsara.com/fleet/vehicles Headers[Accept=application/json Authorization=Bearer xxx_yyy_ZZZZZZZZZZZZZZZZZZZZZZZZZZZz Authorization=Bearer xxx_yyy_ZZZZZZZZZZZZZZZZZZZZZZZZZZZz Authorization=Bearer xxx_yyy_ZZZZZZZZZZZZZZZZZZZZZZZZZZZz Authorization=Bearer xxx_yyy_ZZZZZZZZZZZZZZZZZZZZZZZZZZZz Authorization=Bearer xxx_yyy_ZZZZZZZZZZZZZZZZZZZZZZZZZZZz User-Agent=Quarkus REST Client], Empty body
+2024-12-11 23:14:38,042 x1-11-lca C:\Program Files\Java\jdk-21.0.1\bin\java.exe[71496] DEBUG [org.jbo.res.rea.cli.log.DefaultClientLogger] (vert.x-eventloop-thread-1) Response: GET https://api.eu.samsara.com/fleet/vehicles, Status[400 Bad Request], Headers[Server=awselb/2.0 Date=Wed, 11 Dec 2024 22:14:38 GMT Content-Type=text/html Content-Length=122 Connection=close], Body:
+<html>
+<head><title>400 Bad Request</title></head>
+<body>
+<center><h1>400 Bad Request</h1></cente
+2024-12-11 23:14:38,044 x1-11-lca C:\Program Files\Java\jdk-21.0.1\bin\java.exe[71496] WARN  [com.acm.GreetingResource] (vert.x-eventloop-thread-1) Following Error : 400 -> should the same as the first one
+2024-12-11 23:22:09,838 x1-11-lca C:\Program Files\Java\jdk-21.0.1\bin\java.exe[71496] INFO  [io.qua.dep.dev.RuntimeUpdatesProcessor] (vert.x-worker-thread-13) Restarting quarkus due to changes in GreetingResource.class, GreetingResource$VehiclesApiPlus.class.
+2024-12-11 23:22:09,854 x1-11-lca C:\Program Files\Java\jdk-21.0.1\bin\java.exe[71496] INFO  [io.quarkus] (Quarkus Main Thread) quarkus-openapi-generator-issue9000 stopped in 0.014s

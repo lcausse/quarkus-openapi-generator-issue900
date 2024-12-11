@@ -1,0 +1,588 @@
+{
+  "components": {
+    "parameters": {
+
+    },
+    "requestBodies": {
+
+    },
+    "schemas": {
+      "GoaTagTinyResponseResponseBody": {
+        "description": "A minified tag object",
+        "properties": {
+          "id": {
+            "description": "ID of the tag",
+            "example": "3914",
+            "type": "string"
+          },
+          "name": {
+            "description": "Name of the tag.",
+            "example": "East Coast",
+            "type": "string"
+          },
+          "parentTagId": {
+            "description": "If this tag is part a hierarchical tag tree, this is the ID of the parent tag, otherwise this will be omitted.",
+            "example": "4815",
+            "type": "string"
+          }
+        },
+        "required": ["id", "name"],
+        "type": "object"
+      },
+      "DriverObjectResponseBody": {
+        "description": "Current driver of the vehicle. Note: this parameter includes all assignment sources, not just static assignments.",
+        "properties": {
+          "id": {
+            "description": "ID of the driver.",
+            "example": "0987",
+            "type": "string"
+          },
+          "name": {
+            "description": "Name of the driver.",
+            "example": "Driver Name",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "GoaGatewayTinyResponseResponseBody": {
+        "description": "A minified gateway object",
+        "properties": {
+          "model": {
+            "description": "The model of the gateway installed on the asset.  Valid values: `AG15`, `AG24`, `AG24EU`, `AG26`, `AG26EU`, `AG41`, `AG41EU`, `AG45`, `AG45EU`, `AG46`, `AG46EU`, `AG46P`, `AG46PEU`, `AG51`, `AG51EU`, `AG52`, `AG52EU`, `AG53`, `AG53EU`, `IG15`, `IG21`, `IG41`, `IG61`, `SG1`, `SG1B`, `SG1G`, `SG1G32`, `SG1x`, `VG32`, `VG33`, `VG34`, `VG34EU`, `VG34FN`, `VG34M`, `VG54ATT`, `VG54EU`, `VG54FN`, `VG54NA`, `VG54NAE`, `VG54NAH`, `VG55EU`, `VG55FN`, `VG55NA`",
+            "enum": [
+              "AG15",
+              "AG24",
+              "AG24EU",
+              "AG26",
+              "AG26EU",
+              "AG41",
+              "AG41EU",
+              "AG45",
+              "AG45EU",
+              "AG46",
+              "AG46EU",
+              "AG46P",
+              "AG46PEU",
+              "AG51",
+              "AG51EU",
+              "AG52",
+              "AG52EU",
+              "AG53",
+              "AG53EU",
+              "IG15",
+              "IG21",
+              "IG41",
+              "IG61",
+              "SG1",
+              "SG1B",
+              "SG1G",
+              "SG1G32",
+              "SG1x",
+              "VG32",
+              "VG33",
+              "VG34",
+              "VG34EU",
+              "VG34FN",
+              "VG34M",
+              "VG54ATT",
+              "VG54EU",
+              "VG54FN",
+              "VG54NA",
+              "VG54NAE",
+              "VG54NAH",
+              "VG55EU",
+              "VG55FN",
+              "VG55NA"
+            ],
+            "example": "VG34",
+            "type": "string"
+          },
+          "serial": {
+            "description": "The serial number of the gateway installed on the asset.",
+            "example": "GFRV-43N-VGX",
+            "type": "string"
+          }
+        },
+        "required": ["model", "serial"],
+        "type": "object"
+      },
+      "GoaAttributeTinyResponseBody": {
+        "description": "Attribute properties.",
+        "properties": {
+          "id": {
+            "description": "Id of the attribute",
+            "example": "494123",
+            "type": "string"
+          },
+          "name": {
+            "description": "Name of the attribute",
+            "example": "Compliance/ELD",
+            "type": "string"
+          },
+          "numberValues": {
+            "description": "List of number values associated with the attribute",
+            "example": [867, 5309],
+            "items": {
+              "example": 0.7405685598633346,
+              "format": "double",
+              "type": "number"
+            },
+            "type": "array"
+          },
+          "stringValues": {
+            "description": "List of string values associated with the attribute.",
+            "example": ["HQ", "Leased"],
+            "items": {
+              "example": "Tempora dolorum placeat.",
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "type": "object"
+      },
+      "GoaPaginationResponseResponseBody": {
+        "description": "Pagination parameters.",
+        "properties": {
+          "endCursor": {
+            "description": "Cursor identifier representing the last element in the response. This value should be used in conjunction with a subsequent request's 'after' query parameter. This may be an empty string if there are no more pages left to view.",
+            "example": "MjkY",
+            "type": "string"
+          },
+          "hasNextPage": {
+            "description": "True if there are more pages of results immediately available after this endCursor.",
+            "example": true,
+            "type": "boolean"
+          }
+        },
+        "required": ["endCursor", "hasNextPage"],
+        "type": "object"
+      },
+      "VehicleResponseObjectResponseBody": {
+        "description": "A single vehicle",
+        "properties": {
+          "attributes": {
+            "description": "List of attributes associated with the entity",
+            "items": {
+              "$ref": "#/components/schemas/GoaAttributeTinyResponseBody"
+            },
+            "type": "array"
+          },
+          "auxInputType1": {
+            "description": "The type of auxiliary input configured for this Vehicle.",
+            "example": "boom",
+            "type": "string"
+          },
+          "auxInputType10": {
+            "description": "The type of auxiliary input configured for this Vehicle.",
+            "example": "boom",
+            "type": "string"
+          },
+          "auxInputType11": {
+            "description": "The type of auxiliary input configured for this Vehicle.",
+            "example": "boom",
+            "type": "string"
+          },
+          "auxInputType12": {
+            "description": "The type of auxiliary input configured for this Vehicle.",
+            "example": "boom",
+            "type": "string"
+          },
+          "auxInputType13": {
+            "description": "The type of auxiliary input configured for this Vehicle.",
+            "example": "boom",
+            "type": "string"
+          },
+          "auxInputType2": {
+            "description": "The type of auxiliary input configured for this Vehicle.",
+            "example": "boom",
+            "type": "string"
+          },
+          "auxInputType3": {
+            "description": "The type of auxiliary input configured for this Vehicle.",
+            "example": "boom",
+            "type": "string"
+          },
+          "auxInputType4": {
+            "description": "The type of auxiliary input configured for this Vehicle.",
+            "example": "boom",
+            "type": "string"
+          },
+          "auxInputType5": {
+            "description": "The type of auxiliary input configured for this Vehicle.",
+            "example": "boom",
+            "type": "string"
+          },
+          "auxInputType6": {
+            "description": "The type of auxiliary input configured for this Vehicle.",
+            "example": "boom",
+            "type": "string"
+          },
+          "auxInputType7": {
+            "description": "The type of auxiliary input configured for this Vehicle.",
+            "example": "boom",
+            "type": "string"
+          },
+          "auxInputType8": {
+            "description": "The type of auxiliary input configured for this Vehicle.",
+            "example": "boom",
+            "type": "string"
+          },
+          "auxInputType9": {
+            "description": "The type of auxiliary input configured for this Vehicle.",
+            "example": "boom",
+            "type": "string"
+          },
+          "cameraSerial": {
+            "description": "The serial number of the camera installed in the vehicle",
+            "example": "CNCK-VT8-XA8",
+            "type": "string"
+          },
+          "createdAtTime": {
+            "description": "Time the vehicle was created in RFC 3339 format.",
+            "example": "1992-07-25T10:57:56Z",
+            "format": "date-time",
+            "type": "string"
+          },
+          "esn": {
+            "description": "Engine serial number.",
+            "example": "56349811",
+            "type": "string"
+          },
+          "externalIds": {
+            "additionalProperties": { "type": "string" },
+            "description": "A map of external ids",
+            "type": "object"
+          },
+          "gateway": {
+            "$ref": "#/components/schemas/GoaGatewayTinyResponseResponseBody"
+          },
+          "harshAccelerationSettingType": {
+            "description": "The harsh acceleration setting type.",
+            "example": "off",
+            "type": "string"
+          },
+          "id": {
+            "description": "ID of the vehicle",
+            "example": "494123",
+            "type": "string"
+          },
+          "licensePlate": {
+            "description": "The license plate of the vehicle.",
+            "example": "6SAM123",
+            "type": "string"
+          },
+          "make": {
+            "description": "The Vehicle’s manufacturing make.",
+            "example": "Ford",
+            "type": "string"
+          },
+          "model": {
+            "description": "The Vehicle’s manufacturing model.",
+            "example": "F150",
+            "type": "string"
+          },
+          "name": {
+            "description": "Name of the vehicle",
+            "example": "Fleet Truck #1",
+            "type": "string"
+          },
+          "notes": {
+            "description": "These are generic notes about the Vehicle.",
+            "example": "These are notes about this given vehicle.",
+            "type": "string"
+          },
+          "serial": {
+            "description": "The serial number of the gateway installed in the vehicle.",
+            "example": "VG12345",
+            "type": "string"
+          },
+          "staticAssignedDriver": {
+            "$ref": "#/components/schemas/DriverObjectResponseBody"
+          },
+          "tags": {
+            "description": "The list of tags associated with the Vehicle.",
+            "items": {
+              "$ref": "#/components/schemas/GoaTagTinyResponseResponseBody"
+            },
+            "type": "array"
+          },
+          "updatedAtTime": {
+            "description": "Time the vehicle was updated in RFC 3339 format.",
+            "example": "2014-04-21T17:14:40Z",
+            "format": "date-time",
+            "type": "string"
+          },
+          "vehicleRegulationMode": {
+            "description": "Whether the vehicle is regulated or unregulated (non-CMV).  Valid values: `regulated`, `unregulated`",
+            "enum": ["regulated", "unregulated"],
+            "example": "regulated",
+            "type": "string"
+          },
+          "vehicleType": {
+            "description": "The type of the vehicle. Only returned for customers with commercial speed limits (CSL) enabled.  Valid values: `unset`, `passenger`, `truck`, `bus`",
+            "enum": ["unset", "passenger", "truck", "bus"],
+            "example": "unset",
+            "type": "string"
+          },
+          "vehicleWeight": {
+            "description": "The weight of the vehicle in either pounds (lb) or kilograms (kg). Unit of weight is unknown. Only returned for customers with commercial speed limits (CSL) enabled.",
+            "example": 1000,
+            "format": "int64",
+            "type": "integer"
+          },
+          "vehicleWeightInKilograms": {
+            "description": "The weight of the vehicle in kilograms (kg). Only returned for customers with commercial speed limits (CSL) enabled.",
+            "example": 1000,
+            "format": "int64",
+            "type": "integer"
+          },
+          "vehicleWeightInPounds": {
+            "description": "The weight of the vehicle in pounds (lb). Only returned for customers with commercial speed limits (CSL) enabled.",
+            "example": 2200,
+            "format": "int64",
+            "type": "integer"
+          },
+          "vin": {
+            "description": "The VIN of the vehicle.",
+            "example": "1GBJ6P1B2HV112765",
+            "type": "string"
+          },
+          "year": { "example": "2008", "type": "string" }
+        },
+        "required": ["createdAtTime", "id"],
+        "type": "object"
+      },
+      "VehicleResponseResponseBody": {
+        "description": "A vehicle object",
+        "properties": {
+          "assetType": {
+            "description": "The type of the asset.  Valid values: `uncategorized`, `trailer`, `equipment`, `unpowered`, `vehicle`",
+            "enum": [
+              "uncategorized",
+              "trailer",
+              "equipment",
+              "unpowered",
+              "vehicle"
+            ],
+            "example": "vehicle",
+            "type": "string"
+          },
+          "externalIds": {
+            "additionalProperties": { "type": "string" },
+            "description": "A map of external ids",
+            "type": "object"
+          },
+          "id": {
+            "description": "ID of the vehicle",
+            "example": "494123",
+            "type": "string"
+          },
+          "licensePlate": {
+            "description": "The license plate of the vehicle.",
+            "example": "6SAM123",
+            "type": "string"
+          },
+          "name": {
+            "description": "Name of the vehicle",
+            "example": "Fleet Truck #1",
+            "type": "string"
+          },
+          "vehicleVin": {
+            "description": "The VIN of the vehicle.",
+            "example": "1GBJ6P1B2HV112765",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "VehiclesListVehiclesResponseBody": {
+        "properties": {
+          "data": {
+            "description": "Multiple vehicles.",
+            "items": {
+              "$ref": "#/components/schemas/VehicleResponseObjectResponseBody"
+            },
+            "type": "array"
+          },
+          "pagination": {
+            "$ref": "#/components/schemas/GoaPaginationResponseResponseBody"
+          }
+        },
+        "required": ["data", "pagination"],
+        "type": "object"
+      },
+      "VehiclesListVehiclesUnauthorizedErrorResponseBody": {
+        "description": "Unauthorized",
+        "properties": {
+          "message": {
+            "description": "Message of error",
+            "example": "Invalid token.",
+            "type": "string"
+          },
+          "requestId": {
+            "description": "The request ID; used when reaching out to support for issues with requests.",
+            "example": "8916e1c1",
+            "type": "string"
+          }
+        },
+        "required": ["message", "requestId"],
+        "type": "object"
+      },
+      "VehiclesListVehiclesNotFoundErrorResponseBody": {
+        "description": "Resource not found",
+        "properties": {
+          "message": {
+            "description": "Message of error",
+            "example": "Object not found.",
+            "type": "string"
+          },
+          "requestId": {
+            "description": "The request ID; used when reaching out to support for issues with requests.",
+            "example": "8916e1c1",
+            "type": "string"
+          }
+        },
+        "required": ["message", "requestId"],
+        "type": "object"
+      },
+      "VehiclesListVehiclesBadRequestErrorResponseBody": {
+        "description": "Bad Request parameters",
+        "properties": {
+          "message": {
+            "description": "Message of error",
+            "example": "Invalid value for parameter.",
+            "type": "string"
+          },
+          "requestId": {
+            "description": "The request ID; used when reaching out to support for issues with requests.",
+            "example": "8916e1c1",
+            "type": "string"
+          }
+        },
+        "required": ["message", "requestId"],
+        "type": "object"
+      }
+    },
+    "securitySchemes": {
+      "AccessTokenHeader": { "type": "http", "scheme": "bearer" }
+    }
+  },
+  "info": {
+    "description": "<style type=\"text/css\">\nn {\n    padding: 1em;\n    width: 100%;\n    display: block;\n    margin: 28px 0;\n}\nn.info {\n    background-color: rgba(0, 51, 160, 0.1);\n}\nn.warning {\n    background-color: #fdf6e3;\n}\ni:before {\n    margin-right: 6px;\n}\nnh {\n    font-size: 1.5rem;\n    font-weight: 700;\n    line-height: 1.1;\n    display: block;\n}\nnb {\n    margin-top: 10px;\n    padding-left: 22px;\n    display: block;\n}\n</style>\n\n# Overview\n\n<n class=\"info\">\n<nh>\n<i class=\"fa fa-info-circle\"></i>\nSomething new!\n</nh>\n<nb>\nWelcome XXX's new and improved API. Check out our FAQ [here](https://developers.xxx.com/docs) to see what's changed and learn how to get started.<br>\n<br>\nWant to access the legacy API docs? You can find them [here](https://www.xxx.com/).<br>\n<br>\n*Note: Because this is a new set of APIs, we have not transitioned all endpoints over to this standard. Endpoints that still use the legacy standards are indicated in the reference documentation. If you can't find an API that you're looking for, we encourage you to look for it in our [legacy API docs](https://www.xxx.com/api-legacy) as we continue to transition all endpoints over. Check back here for updates!*<br>\n<br>\nSubmit your feedback [here](https://forms.gle/r4bs6HQshQAvBuwv6)!\n</nb>\n</n>\n\nxxx provides API endpoints so that you can build powerful applications and custom solutions with sensor data. xxx has endpoints available to track and analyze sensors, vehicles, and entire fleets.\n\nThe xxx API is a [RESTful API](https://en.wikipedia.org/wiki/Representational_state_transfer). It uses standard [HTTP](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol) authentication, verbs, and response codes, and it returns [JSON](http://www.json.org/) response bodies. If you're familiar with what you can build with a REST API, then this will be your go-to API reference.\n\nVisit [developers.xxx.com](https://developers.xxx.com) to find getting started guides and an API overview.\n\nIf you have any questions, please visit https://xxx.com/help.\n\n## Endpoints\n\nAll our APIs can be accessed through HTTP requests to URLs like:\n\n```\nhttps://api.xxx.com/<endpoint>\n```\n\nFor EU customers, this URL will be:\n\n```\nhttps://api.eu.xxx.com/<endpoint>\n```\n\n<n class=\"warning\">\n<nh>\n<i class=\"fa fa-exclamation-circle\"></i>\nNote\n</nh>\n<nb>\nLegacy endpoints will have the URL: `https://api.xxx.com/v1/<endpoint>` or `https://api.eu.xxx.com/v1/<endpoint>`\n</nb>\n</n>\n\n## Authentication\n\nTo authenticate your API request you will need to include your secret token. You can manage your API tokens in the [Dashboard](https://cloud.xxx.com). They are visible under `Settings->Organization->API Tokens`.\n\nYour API tokens carry many privileges, so be sure to keep them secure. Do not share your secret API tokens in publicly accessible areas such as GitHub, client-side code, and so on.\n\nAuthentication to the API is performed via Bearer Token in the HTTP Authorization header. Provide your API token as the `access_token` value in an `Authorization: Bearer` header. You do not need to provide a password:\n\n```curl\nAuthorization: Bearer {access_token}\n```\n\nAll API requests must be made over [HTTPS](https://en.wikipedia.org/wiki/HTTPS). Calls made over plain HTTP or without authentication will fail.\n\n### OAuth2\nIf building an application for our marketplace, our API is accessible via. OAuth2 as well.\n\n| Type  | Value |\n| ------------- |:-------------:|\n| Security scheme      | OAuth2                                   |\n| OAuth2 Flow          | accessCode                               |\n| Authorization URL    | https://api.xxx.com/oauth2/authorize |\n| Token URL            | https://api.xxx.com/oauth2/token     |\n\n\n\n## Common Patterns\n\nYou can find more info about request methods, response codes, error codes, versioning, pagination, timestamps, and mini-objects [here](https://developers.xxx.com/docs/common-structures).\n",
+    "title": "xxx API",
+    "version": "2024-02-06"
+  },
+  "openapi": "3.0.1",
+  "paths": {
+    "/fleet/vehicles": {
+      "get": {
+        "description": "Returns a list of all vehicles.\n\n <b>Rate limit:</b> 25 requests/sec (learn more about rate limits <a href=\"https://developers.xxx.com/docs/rate-limits\" target=\"_blank\">here</a>).\n\nTo use this endpoint, select **Read Vehicles** under the Vehicles category when creating or editing an API token. <a href=\"https://developers.xxx.com/docs/authentication#scopes-for-api-tokens\" target=\"_blank\">Learn More.</a>\n \n\n **Submit Feedback**: Likes, dislikes, and API feature requests should be filed as feedback in our <a href=\"https://forms.gle/zkD4NCH7HjKb7mm69\" target=\"_blank\">API feedback form</a>. If you encountered an issue or noticed inaccuracies in the API documentation, please <a href=\"https://www.xxx.com/help\" target=\"_blank\">submit a case</a> to our support team.",
+        "operationId": "listVehicles",
+        "parameters": [
+          {
+            "description": "The limit for how many objects will be in the response. Default and max for this value is 512 objects.",
+            "in": "query",
+            "name": "limit",
+            "schema": {
+              "default": 512,
+              "maximum": 512,
+              "minimum": 1,
+              "type": "integer"
+            }
+          },
+          {
+            "description": " If specified, this should be the endCursor value from the previous page of results. When present, this request will return the next page of results that occur immediately after the previous page of results.",
+            "in": "query",
+            "name": "after",
+            "schema": { "type": "string" }
+          },
+          {
+            "description": " A filter on the data based on this comma-separated list of parent tag IDs, for use by orgs with tag hierarchies. Specifying a parent tag will implicitly include all descendent tags of the parent tag. Example: `parentTagIds=345,678`",
+            "in": "query",
+            "name": "parentTagIds",
+            "schema": { "type": "string" }
+          },
+          {
+            "description": " A filter on the data based on this comma-separated list of tag IDs. Example: `tagIds=1234,5678`",
+            "in": "query",
+            "name": "tagIds",
+            "schema": { "type": "string" }
+          },
+          {
+            "description": "A filter on the data based on this comma-separated list of attribute value IDs. Only entities associated with ALL of the referenced values will be returned (i.e. the intersection of the sets of entities with each value). Example: `attributeValueIds=076efac2-83b5-47aa-ba36-18428436dcac,6707b3f0-23b9-4fe3-b7be-11be34aea544`",
+            "in": "query",
+            "name": "attributeValueIds",
+            "schema": { "type": "string" }
+          },
+          {
+            "description": " A filter on data to have an updated at time after or equal to this specified time in RFC 3339 format. Millisecond precision and timezones are supported. (Examples: 2019-06-13T19:08:25Z, 2019-06-13T19:08:25.455Z, OR 2015-09-15T14:00:12-04:00).",
+            "in": "query",
+            "name": "updatedAfterTime",
+            "schema": { "type": "string" }
+          },
+          {
+            "description": " A filter on data to have a created at time after or equal to this specified time in RFC 3339 format. Millisecond precision and timezones are supported. (Examples: 2019-06-13T19:08:25Z, 2019-06-13T19:08:25.455Z, OR 2015-09-15T14:00:12-04:00).",
+            "in": "query",
+            "name": "createdAfterTime",
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VehiclesListVehiclesResponseBody"
+                }
+              }
+            },
+            "description": "OK response."
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VehiclesListVehiclesUnauthorizedErrorResponseBody"
+                }
+              }
+            },
+            "description": "Unauthorized response."
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VehiclesListVehiclesNotFoundErrorResponseBody"
+                }
+              }
+            },
+            "description": "Not Found response."
+          },
+          "default": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VehiclesListVehiclesBadRequestErrorResponseBody"
+                }
+              }
+            },
+            "description": "Bad Request response."
+          }
+        },
+        "summary": "List all vehicles.",
+        "tags": ["Vehicles"]
+      }
+    }
+  },
+  "security": [{ "AccessTokenHeader": [] }],
+  "servers": [
+    { "url": "" }
+  ],
+  "tags": [
+    { "name": "Vehicles" }
+  ],
+  "x-original-swagger-version": "2.0",
+  "x-readme": { "explorer-enabled": true, "proxy-enabled": true }
+}
