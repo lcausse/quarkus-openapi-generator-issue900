@@ -1,64 +1,26 @@
-# quarkus-openapi-generator-issue9000
+# quarkus-openapi-generator Reproducer issue #900
 
-This project uses Quarkus, the Supersonic Subatomic Java Framework.
-
-If you want to learn more about Quarkus, please visit its website: <https://quarkus.io/>.
-
-## Running the application in dev mode
-
-You can run your application in dev mode that enables live coding using:
-
-```shell script
+This repository contains a reproducer for Quarkus (https://github.com/quarkiverse/quarkus-openapi-generator/issues/900) issue.
+To reproduce it, do a native build
+Run in dev mode
 ./mvnw quarkus:dev
-```
 
-> **_NOTE:_**  Quarkus now ships with a Dev UI, which is available in dev mode only at <http://localhost:8080/q/dev/>.
+Get http://localhost:8080/hello endpoint 
+=> It calls 5 times a non exhisting REST Server with the generated Client (with Bearer Token Auth)
+- first time : 1 Authorization Header can be seen in log file ==> Correct
+- other times : several values in Authorization Header can be seen in log file
 
-## Packaging and running the application
 
-The application can be packaged using:
+## CODE GENERATOR INFO
 
-```shell script
-./mvnw package
-```
+One API json file located in src/openapi : quite complex ... but highly simplified from real one ! => Sorry not having done more
+reproducer_json is the conf key
+Bearer id dummy
 
-It produces the `quarkus-run.jar` file in the `target/quarkus-app/` directory.
-Be aware that it’s not an _über-jar_ as the dependencies are copied into the `target/quarkus-app/lib/` directory.
+I had an extension to the generated API to add a Request Client Filter to log Authorization Headers at each request
 
-The application is now runnable using `java -jar target/quarkus-app/quarkus-run.jar`.
-
-If you want to build an _über-jar_, execute the following command:
-
-```shell script
-./mvnw package -Dquarkus.package.jar.type=uber-jar
-```
-
-The application, packaged as an _über-jar_, is now runnable using `java -jar target/*-runner.jar`.
-
-## Creating a native executable
-
-You can create a native executable using:
-
-```shell script
-./mvnw package -Dnative
-```
-
-Or, if you don't have GraalVM installed, you can run the native executable build in a container using:
-
-```shell script
-./mvnw package -Dnative -Dquarkus.native.container-build=true
-```
-
-You can then execute your native executable with: `./target/quarkus-openapi-generator-issue9000-1.0.0-SNAPSHOT-runner`
-
-If you want to learn more about building native executables, please consult <https://quarkus.io/guides/maven-tooling>.
-
-## Provided Code
-
-### REST
-
-Easily start your REST Web Services
-
-[Related guide section...](https://quarkus.io/guides/getting-started-reactive#reactive-jax-rs-resources)
-# quarkus-openapi-generator-issue9000
-# quarkus-openapi-generator-issue9000
+## VERSIONS
+windows 11
+Java 21
+quarkus:3.17.4
+quarkus-openapi-generator:2.6.0-lts
