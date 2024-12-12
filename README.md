@@ -13,10 +13,12 @@ Get http://localhost:8080/hello endpoint
 
 ## CODE GENERATOR INFO
 One API json file located in src/openapi/reproducer.json : quite complex ... but highly simplified from real one  (~100k lines) ! 
+
 => Sorry not having done more
-reproducer_json is the conf key
-options for code generation are "mutinity=true" and base package name "com.acme"
-The generated "Rest Client" is VehiclesApi => only one GET service : getVehicles
+
+- reproducer_json is the conf key
+- options for code generation are "mutinity=true" and base package name "com.acme"
+- The generated "Rest Client" is VehiclesApi => only one GET service : getVehicles
 
 => see GreetingResource.java /hello entry 
   One async call
