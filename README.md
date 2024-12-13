@@ -20,19 +20,19 @@ One API json file located in src/openapi/reproducer.json : quite complex ... but
 - options for code generation are "mutinity=true" and base package name "com.acme"
 - The generated "Rest Client" is VehiclesApi => only one GET service : getVehicles
 
-=> see GreetingResource.java /hello entry 
-  One async call
-  Some handlers for logging errors
-  and nothing more
+=> see GreetingResource.java /hello entry
+- One async call
+- Some handlers for logging errors
+- and nothing more
 
 I had an interface extension to the generated API to add a Request Client Filter to log Authorization Headers at each request
 With or Without extension, the results are the same.
 
 ## VERSIONS
-windows 11
-Java 21
-quarkus:3.17.4
-quarkus-openapi-generator:2.6.0-lts
+- windows 11
+- Java 21
+- quarkus:3.17.4
+- quarkus-openapi-generator:2.6.0-lts
 
 ## APOLOGIES
 this is my first reproducer. I ve done my best !
